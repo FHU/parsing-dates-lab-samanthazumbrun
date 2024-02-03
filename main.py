@@ -21,14 +21,22 @@ def parse_month(month):
 extra_zero = 0
 day = 0
 def parse_date(month, day, year):
-    return(parse_month(month),'/',day,'/',year)
+    month, day, year = month.strip(","), day.strip(","), year.strip(",")
+    month = str(parse_month(month))
+    day = str(day)
+    if len(month)==1:
+        month = f"0{month}"
+    if len(day)==1:
+        day = f"0{day}"
+    
+    return(f"{month}/{day}/{str(year)}")
         
 if __name__ == '__main__':
-    date = input().split(' ')
+    date = input().split()
     month = date[0]
+    
     day = date[1]
-    if day > '0' and day < '10':
-        day = str(day).zfill(extra_zero)
+    
     day=day[:2]
     year= date[2]
 
