@@ -17,10 +17,10 @@ def parse_month(month):
         }
 
     return months[month]
-extra_zero = 0
-day = 0
+
+
 def parse_date(date):
-    month = date[0]  
+    month = str(date[0]) 
     day = date[1] 
     day = day[:2]
     year= date[2]
