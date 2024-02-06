@@ -19,7 +19,11 @@ def parse_month(month):
     return months[month]
 extra_zero = 0
 day = 0
-def parse_date(month, day, year):
+def parse_date(date):
+    month = date[0]  
+    day = date[1] 
+    day = day[:2]
+    year= date[2]
     month, day, year = month.strip(","), day.strip(","), year.strip(",")
     month = str(parse_month(month))
     day = str(day)
@@ -28,12 +32,8 @@ def parse_date(month, day, year):
     if len(day)==1:
         day = f"0{day}"
     
-    return(f"{month}/{day}/{str(year)}")     
+    return(f"{month}/{day}/{str(year)}")
+     
 if __name__ == '__main__':
     date = input().split()
-    month = date[0]  
-    day = date[1] 
-    day=day[:2]
-    year= date[2]
-    print(parse_date(month,day,year))
-#test
+    print(parse_date(date))
