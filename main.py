@@ -36,3 +36,4 @@ if __name__ == '__main__':
     day=day[:2]
     year= date[2]
     print(parse_date(month,day,year))
+#test
