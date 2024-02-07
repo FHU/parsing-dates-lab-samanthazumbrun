@@ -21,9 +21,8 @@ def parse_month(month):
 
 def parse_date(date):
     month = str(date[0]) 
-    day = str(date[1][:2])
+    day = str(date[1][:2]).strip(',')
     year= date[2]
-    month, day, year = month.strip(","), day.strip(","), year.strip(",")
     num_month = str(parse_month(month))
     if len(num_month)==1:
         num_month = f"0{num_month}"
