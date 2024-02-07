@@ -21,18 +21,15 @@ def parse_month(month):
 
 def parse_date(date):
     month = str(date[0]) 
-    day = date[1] 
-    day = day[:2]
+    day = str(date[1][:2])
     year= date[2]
     month, day, year = month.strip(","), day.strip(","), year.strip(",")
-    month = str(parse_month(month))
-    day = str(day)
-    if len(month)==1:
-        month = f"0{month}"
+    num_month = str(parse_month(month))
+    if len(num_month)==1:
+        num_month = f"0{num_month}"
     if len(day)==1:
         day = f"0{day}"
-    
-    return(f"{month}/{day}/{str(year)}")
+    return(f"{num_month}/{day}/{str(year)}")
      
 if __name__ == '__main__':
     date = input().split()
