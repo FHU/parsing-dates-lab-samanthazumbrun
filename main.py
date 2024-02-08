@@ -20,6 +20,7 @@ def parse_month(month):
 
 
 def parse_date(date):
+    date = date.split()
     month = str(date[0]) 
     day = str(date[1][:2]).strip(',')
     year= date[2]
@@ -31,6 +32,6 @@ def parse_date(date):
     return(f"{num_month}/{day}/{str(year)}")
      
 if __name__ == '__main__':
-    date = input().split()
+    date = input()
     print(parse_date(date))
     #test
