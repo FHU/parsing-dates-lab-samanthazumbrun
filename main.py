@@ -33,3 +33,4 @@ def parse_date(date):
 if __name__ == '__main__':
     date = input().split()
     print(parse_date(date))
+    #test
